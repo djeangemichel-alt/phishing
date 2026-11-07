@@ -64,7 +64,7 @@ def consentement():
     fichier = "visiteurs.csv"
     nouveau_visiteurs = not os.path.exists(fichier)
 
-    with open(fichier, "a", newline=">> ", encoding="utf-8") as f:
+    with open(fichier, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         if nouveau_visiteurs:
             writer.writerow(["Date", "Adresse IP", "Navigateur"])

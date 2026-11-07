@@ -7,7 +7,7 @@ do
     PID=$!  # recupere le PID du processus qui vient detre lancé
     echo "serveur lancé avec le PID $PID "
     
-    sleep 5
+    sleep 15
 
     echo "[$(date)] Arret du serveur ..."
 
