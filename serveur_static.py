@@ -60,9 +60,14 @@ def consentement():
     ip = request.remote_addr
     navigateur = request.headers.get("User-Agent", "Inconnu")
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    validation = request.form.get("validation", "").strip().lower()
 
     fichier = "visiteurs.csv"
     nouveau_visiteurs = not os.path.exists(fichier)
+        
+        
+    if validation != "lu et approuvé":
+            return "Tu dois écrire exactement : lu et approuvé", 400
 
     with open(fichier, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
