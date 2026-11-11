@@ -16,3 +16,70 @@ do
     #petit pause
     sleep 1
 done  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+while True 
+do
+    echo "lancement du serveur ..."
+
+    sleep (2)
+
+    python3 envoyerICMP.py & 
+    
+
+    echo " le serveur s'est arrété "
+
+    sleep (5)
+
+done 
+
+
+
+while True 
+do
+    echo "lancement du serveur ..."
+
+    sleep (2)
+
+    python3 envoyerICMP.py & 
+    PID = $!
+
+    echo " le serveur va s'arréter"
+    sleep (5)
+    kill $PID
+
+    sleep (5)
+
+done 
