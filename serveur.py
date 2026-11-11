@@ -1,8 +1,8 @@
 from sqlite3 import Date
-from flask import Flask, render_template_string, request
+from flask import Flask, render_template_string, render_template, request
 from datetime import datetime 
-import csv 
-import os # une bibliothèque pour gérer les fichiers et les chemins de fichiers
+import csv,os  # os une bibliothèque pour gérer les fichiers et les chemins de fichiers
+
 
 app = Flask(__name__)
 
@@ -67,7 +67,8 @@ def consentement():
         
         
     if validation != "lu et approuvé":
-            return "Tu dois écrire exactement : lu et approuvé", 400
+            message = print("Tu dois écrire exactement : lu et approuvé")
+            return render_template(os.error.html), 400
 
     with open(fichier, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
